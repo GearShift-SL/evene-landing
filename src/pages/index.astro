@@ -46,14 +46,14 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
   <section id="about" class="bg-[#faf9f7] py-20 md:py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <!-- Section Title -->
-      <h2 class="text-center text-sm md:text-base tracking-[0.3em] uppercase text-[#1a1a1a] mb-16 font-medium">
+      <h2 class="scroll-animate text-center text-sm md:text-base tracking-[0.3em] uppercase text-[#1a1a1a] mb-16 font-medium">
         Sobre Nosotros
       </h2>
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 mb-16 md:mb-20">
         <!-- Stat 1: Homes -->
-        <div class="text-center">
+        <div class="scroll-animate text-center" data-delay="100">
           <p class="font-serif text-6xl md:text-7xl lg:text-8xl text-[#1a1a1a] mb-4 tracking-tight">
             1000<span class="text-[#8b4513]">+</span>
           </p>
@@ -63,7 +63,7 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
         </div>
 
         <!-- Stat 2: Year Founded -->
-        <div class="text-center">
+        <div class="scroll-animate text-center" data-delay="200">
           <p class="font-serif text-6xl md:text-7xl lg:text-8xl text-[#1a1a1a] mb-4 tracking-tight">
             2022
           </p>
@@ -74,17 +74,17 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
       </div>
 
       <!-- Divider -->
-      <div class="w-16 h-px bg-[#8b4513]/40 mx-auto mb-16 md:mb-20"></div>
+      <div class="scroll-animate w-16 h-px bg-[#8b4513]/40 mx-auto mb-16 md:mb-20" data-delay="300"></div>
 
       <!-- Description Paragraphs -->
       <div class="max-w-3xl mx-auto space-y-8 text-center">
-        <p class="text-base md:text-lg text-[#2a2a2a] leading-relaxed">
+        <p class="scroll-animate text-base md:text-lg text-[#2a2a2a] leading-relaxed" data-delay="100">
           <span class="text-[#8b4513] font-medium">Evene</span> es una promotora inmobiliaria de servicio integral impulsada por un equipo familiar de profesionales con una dilatada trayectoria en el sector. Nuestra experiencia combinada abarca todas las áreas del desarrollo inmobiliario, desde la adquisición del suelo hasta la entrega de llaves.
         </p>
-        <p class="text-base md:text-lg text-[#2a2a2a] leading-relaxed">
+        <p class="scroll-animate text-base md:text-lg text-[#2a2a2a] leading-relaxed" data-delay="200">
           Una comunicación clara y una ejecución impecable nos permiten desarrollar, comercializar y gestionar proyectos residenciales de la más alta calidad en Madrid.
         </p>
-        <p class="text-[#5a4a3a] text-base md:text-lg leading-relaxed italic">
+        <p class="scroll-animate text-[#5a4a3a] text-base md:text-lg leading-relaxed italic" data-delay="300">
           Nuestra historia de éxito incluye la construcción y venta de más de mil viviendas en Madrid, experiencia que ahora canalizamos a través de Evene para redefinir los estándares de la promoción inmobiliaria en la capital y otras ubicaciones estratégicas de España.
         </p>
       </div>
@@ -95,10 +95,10 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
   <section class="bg-[#f5f4f2] py-20 md:py-32 px-6" id="pillars">
     <div class="max-w-7xl mx-auto">
       <!-- Section Title -->
-      <h2 class="text-center font-serif text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] uppercase text-[#1a1a1a] mb-4">
+      <h2 class="scroll-animate text-center font-serif text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] uppercase text-[#1a1a1a] mb-4">
         Los Tres Pilares
       </h2>
-      <p class="text-center font-serif text-lg md:text-xl lg:text-2xl tracking-[0.06em] uppercase text-[#1a1a1a]/80 mb-16 md:mb-24">
+      <p class="scroll-animate text-center font-serif text-lg md:text-xl lg:text-2xl tracking-[0.06em] uppercase text-[#1a1a1a]/80 mb-16 md:mb-24" data-delay="100">
         de la Filosofía de Evene
       </p>
 
@@ -106,7 +106,7 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
         
         <!-- Pillar 1: Calidad -->
-        <article class="pillar-card group">
+        <article class="scroll-animate pillar-card group" data-direction="left">
           <div class="relative overflow-hidden mb-8 aspect-4/3 bg-[#e8e6e3]">
             <Image 
               src={calidadImg} 
@@ -116,16 +116,16 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
             />
             <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <h3 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic">
+          <h3 class="scroll-animate font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic" data-delay="100">
             Calidad
           </h3>
-          <p class="text-[#4a4a4a] text-base leading-relaxed">
+          <p class="scroll-animate text-[#4a4a4a] text-base leading-relaxed" data-delay="200">
             Evene desarrolla proyectos inmobiliarios para quienes valoran el diseño impecable, la artesanía superior y los acabados más exclusivos. Cada una de nuestras promociones encarna la verdadera definición de calidad, desde los materiales personalizados y las distribuciones cuidadosamente pensadas hasta las prestaciones elevadas de cada espacio.
           </p>
         </article>
 
         <!-- Pillar 2: Personalización -->
-        <article class="pillar-card group">
+        <article class="scroll-animate pillar-card group" data-delay="100">
           <div class="relative overflow-hidden mb-8 aspect-4/3 bg-[#e8e6e3]">
             <Image 
               src={personalizacionImg} 
@@ -135,16 +135,16 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
             />
             <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <h3 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic">
+          <h3 class="scroll-animate font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic" data-delay="200">
             Personalización
           </h3>
-          <p class="text-[#4a4a4a] text-base leading-relaxed">
+          <p class="scroll-animate text-[#4a4a4a] text-base leading-relaxed" data-delay="300">
             El verdadero lujo es cuestión de elección. Evene ofrece una propuesta de valor única que permite a los compradores seleccionar entre una sofisticada gama de acabados, diseños y distribuciones para adaptar su hogar a sus gustos individuales. La personalización va más allá de lo tangible: incluye vistas, planos flexibles y servicios exclusivos.
           </p>
         </article>
 
         <!-- Pillar 3: Excelencia -->
-        <article class="pillar-card group">
+        <article class="scroll-animate pillar-card group" data-direction="right" data-delay="200">
           <div class="relative overflow-hidden mb-8 aspect-4/3 bg-[#e8e6e3]">
             <Image 
               src={excelenciaImg} 
@@ -154,10 +154,10 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
             />
             <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <h3 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic">
+          <h3 class="scroll-animate font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 tracking-wide italic" data-delay="300">
             Excelencia
           </h3>
-          <p class="text-[#4a4a4a] text-base leading-relaxed">
+          <p class="scroll-animate text-[#4a4a4a] text-base leading-relaxed" data-delay="400">
             La excelencia nace de nuestro compromiso con profesionales de primer nivel. Colaboramos con arquitectos de renombre, diseñadores de interiores, consultores y operadores de servicios. Nuestro equipo interno supervisa cada aspecto, desde la concepción hasta la finalización, dedicando el tiempo, la energía y los recursos necesarios para entregar productos y servicios excepcionales.
           </p>
         </article>
@@ -181,5 +181,86 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
   .animate-fade-in-up {
     animation: fade-in-up 1.2s ease-out;
   }
+
+  /* Scroll Animation Styles */
+  .scroll-animate {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-animate:not([data-direction]) {
+    transform: translateY(40px);
+  }
+
+  .scroll-animate[data-direction="left"] {
+    transform: translateX(-40px);
+  }
+
+  .scroll-animate[data-direction="right"] {
+    transform: translateX(40px);
+  }
+
+  .scroll-animate[data-direction="up"] {
+    transform: translateY(-40px);
+  }
+
+  .scroll-animate.animate-in {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  /* Staggered animation delays */
+  .scroll-animate[data-delay="100"].animate-in {
+    transition-delay: 0.1s;
+  }
+
+  .scroll-animate[data-delay="200"].animate-in {
+    transition-delay: 0.2s;
+  }
+
+  .scroll-animate[data-delay="300"].animate-in {
+    transition-delay: 0.3s;
+  }
+
+  .scroll-animate[data-delay="400"].animate-in {
+    transition-delay: 0.4s;
+  }
+
+  .scroll-animate[data-delay="500"].animate-in {
+    transition-delay: 0.5s;
+  }
 </style>
+
+<script>
+  // Scroll Animation Observer
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const animateOnScroll = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        // Optional: unobserve after animation to improve performance
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+  // Observe all elements with scroll-animate class
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+
+  // Re-observe on page navigation (for SPAs)
+  document.addEventListener('astro:page-load', () => {
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+</script>
 

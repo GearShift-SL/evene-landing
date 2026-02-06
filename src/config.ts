@@ -92,6 +92,7 @@ export const NAVIGATION = (): NavigationConfig => ({
                 title: "Evene",
                 links: [
                     { text: "Sobre nosotros", href: `/#about` },
+                    { text: "Promociones", href: `/promociones/` },
                 ],
             },
         ],
