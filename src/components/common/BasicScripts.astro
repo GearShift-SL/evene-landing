@@ -102,9 +102,10 @@
         function applyHeaderStylesOnScroll() {
           const header = document.querySelector('#header[data-aw-sticky-header]');
           if (!header) return;
+          const isFloatingAtTop = header.hasAttribute('data-aw-floating-at-top');
           if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
             header.classList.add('scroll');
-          } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+          } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll') && !isFloatingAtTop) {
             header.classList.remove('scroll');
           }
           ticking = false;
