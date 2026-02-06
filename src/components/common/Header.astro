@@ -65,7 +65,7 @@ const currentPath = `/${new URL(Astro.url).pathname}/`;
       },
     ]}
   >
-    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
+    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between w-full']}>
       <a class="flex items-center" href={`/`}>
         <Logo class="h-10 w-auto" />
       </a>
@@ -199,15 +199,29 @@ const currentPath = `/${new URL(Astro.url).pathname}/`;
 
   #header.h-screen > div > div:last-child {
     display: flex !important;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 1.5rem 0;
     margin-top: auto;
     visibility: visible !important;
   }
 
+  #header.h-screen > div > div:last-child > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   #header.h-screen > div > div:last-child a {
-    margin: 0 0.5rem;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 200px;
+    white-space: nowrap;
   }
 
   @media (min-width: 768px) {
