@@ -5,13 +5,15 @@ import PostsByYear from '~/components/blog/PostsByYear.astro';
 
 const posts = await getCollection('blog');
 const publishedPosts = posts.filter((post) => post.data.draft !== true);
+
+const metadata = {
+  title: 'Blog',
+  description: 'Blog de Evene',
+};
 ---
 
 <PageLayout
-  metadata={{
-    title: 'Blog',
-    description: 'Blog de Evene',
-  }}
+  metadata={metadata}
 >
   <div class="max-w-3xl mx-auto px-4 py-16">
     <PostsByYear posts={publishedPosts} />
