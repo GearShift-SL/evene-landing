@@ -67,6 +67,8 @@ There are a bunch of things you need to change immediately after cloning the pro
 
 10. **Footer**: Update the footer in `src/components/common/Footer.astro`
 
+11. **Contact**: Update the contact form API endpoint in `src/pages/contact.astro`
+
 ## Importing images
 
 Astro optimizes the images at build time if you import them this way:
@@ -106,3 +108,10 @@ You can also use `client:visible` to only hydrate the react component whenever t
 2. Put your content in `src/content/` following the same metadata pattern as the existing template posts.
 
 3. If you put an image named `cover.png` in one of the content directories, it will be automatically used as an og image and a cover image for that article.
+
+
+## Umami analytics
+
+This template uses umami analytics.
+
+You can change the umami analytics id and domain in `src/layouts/Layout.astro`
