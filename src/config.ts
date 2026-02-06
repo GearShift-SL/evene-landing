@@ -67,7 +67,6 @@ export const SITE = (): SiteConfig => {
 export const NAVIGATION = (): NavigationConfig => ({
     header: {
         links: [
-            { text: "Inicio", href: `/` },
             { text: "Promociones", href: `/promociones/` },
             { text: "Sobre nosotros", href: `/#about` },
         ],
