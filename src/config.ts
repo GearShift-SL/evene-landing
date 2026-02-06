@@ -58,7 +58,7 @@ export const SITE = (): SiteConfig => {
             "Promotora con más de 20 años de experiencia en el mercado inmobiliario de Madrid",
         author: "Evene",
         siteUrl: "https://evene.es/",
-        ogImage: "/src/assets/images/og-image.jpg", // Needs to be an absolute path /src/...
+        ogImage: "/src/assets/images/og-image.png", // Needs to be an absolute path /src/...
         locale: "es_ES",
         twitter: { site: "@evene" },
     };
