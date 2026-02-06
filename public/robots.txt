@@ -1,8 +1,8 @@
-# robots.txt for https://mywebsite.com
+# robots.txt for https://evene.es
 
 User-agent: *
 Disallow: /cdn-cgi/
 Allow: /
 
 # Sitemaps
-Sitemap: https://mywebsite.com/sitemap-index.xml 
+Sitemap: https://evene.es/sitemap-index.xml 

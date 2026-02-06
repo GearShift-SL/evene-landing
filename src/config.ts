@@ -53,14 +53,14 @@ type NavigationConfig = {
 
 export const SITE = (): SiteConfig => {
     return {
-        title: "MyWebsite - This is my website",
+        title: "Evene - Viviendas de Lujo en Madrid",
         description:
-            "This is my website description",
-        author: "My Name",
-        siteUrl: "https://mywebsite.com/",
+            "Promotora con más de 20 años de experiencia en el mercado inmobiliario de Madrid",
+        author: "Evene",
+        siteUrl: "https://evene.es/",
         ogImage: "/src/assets/images/og-image.jpg", // Needs to be an absolute path /src/...
-        locale: "en_US",
-        twitter: { site: "@mywebsite" },
+        locale: "es_ES",
+        twitter: { site: "@evene" },
     };
 };
 
@@ -69,9 +69,9 @@ export const NAVIGATION = (): NavigationConfig => ({
         links: [],
         actions: [
             {
-                href: `/#hero`,
-                text: "Start syncing",
-                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rocket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>`
+                href: `/promociones/`,
+                text: "Nuestras promociones",
+                // icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rocket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>`
             },
         ],
     },
@@ -79,49 +79,38 @@ export const NAVIGATION = (): NavigationConfig => ({
     footer: {
         links: [
             {
-                title: "Support",
+                title: "Soporte",
                 links: [
-                    { text: "Contact", href: `/contact/` },
+                    { text: "Contacto", href: `/contact/` },
                     { text: "Blog", href: `/blog/` },
-                    { text: "Guides", href: `/blog/guides/` },
+                    { text: "Noticias", href: `/blog/noticias/` },
                 ],
             },
             {
-                title: "MyWebsite",
+                title: "Evene",
                 links: [
-                    { text: "How it works", href: `/#features` },
-                    { text: "About us", href: `/#about` },
-                ],
-            },
-            {
-                title: "GearShift Universe",
-                links: [
-                    { text: "GearShift", href: "https://gearshift.es/" },
-                    { text: "postify AI", href: "https://postifyai.com/" },
-                    { text: "Estavia", href: "https://estavia.ai/" },
-                    { text: "AutoIPC", href: "https://autoipc.es/" },
-                    { text: "SynCal", href: "https://syncal.app/" },
+                    { text: "Sobre nosotros", href: `/#about` },
                 ],
             },
         ],
         secondaryLinks: [
-            { text: "Terms and conditions", href: `/terms/` },
-            { text: "Privacy policy", href: `/privacy/` },
+            { text: "Términos y condiciones", href: `/terms/` },
+            { text: "Política de privacidad", href: `/privacy/` },
         ],
         socialLinks: [
-            {
-                ariaLabel: "X",
-                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16l-4.267 0" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>`,
-                href: "https://x.com/mywebsite",
-            },
+            // {
+            //     ariaLabel: "X",
+            //     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16l-4.267 0" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>`,
+            //     href: "https://x.com/mywebsite",
+            // },
             // { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/mywebsite' },
             // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://facebook.com/mywebsite' },
             { ariaLabel: "RSS", icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>`, href: `/rss.xml` },
         ],
         contactDetails: {
-            address: "Calle Santa Leonor, 64, Edifio D, Madrid",
+            address: "Calle Maestro Felisa Lozano, 7, 28042, Madrid",
             addressLink: "https://maps.app.goo.gl/tb4McHigby4r5BeP7",
-            email: "hello@mywebsite.com",
+            email: "info@evene.es",
         },
         footNote: `
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
