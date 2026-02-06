@@ -25,6 +25,7 @@ export interface Props {
   actions?: Array<ActionLink>;
   isSticky?: boolean;
   isFullWidth?: boolean;
+  isFloatingAtTop?: boolean;
   isDark?: boolean;
 }
 
@@ -34,6 +35,7 @@ const {
   actions = [],
   isSticky = false,  // If true, the header will stick to the top of the page when scrolling
   isFullWidth = false,  // If sticky is true, this will make the header full width when scrolling
+  isFloatingAtTop = false,  // If true, the header will float at the top of the page in absolute position
   isDark = false,  // If true, the header will be dark
 } = Astro.props;
 
@@ -42,10 +44,11 @@ const currentPath = `/${new URL(Astro.url).pathname}/`;
 
 <header
   class:list={[
-    { sticky: isSticky, relative: !isSticky, dark: isDark, 'full-width': isFullWidth },
+    { sticky: isSticky, relative: !isSticky, dark: isDark, 'full-width': isFullWidth, scroll: isFloatingAtTop },
     'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-opacity ease-in-out',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
+  {...isFloatingAtTop ? { 'data-aw-floating-at-top': true } : {}}
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>
