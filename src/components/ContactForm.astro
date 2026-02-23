@@ -1,19 +1,21 @@
 ---
 interface Props {
-  contactListName?: string;
+  audienceName?: string;
+  audienceType?: 'contact_form' | 'waitlist' | 'newsletter';
   successMessage?: string;
   errorMessage?: string;
 }
 
 const {
-  contactListName = 'evene_contact',
+  audienceName = 'evene_contact',
+  audienceType = 'contact_form',
   successMessage = 'Gracias por tu mensaje! Nos pondremos en contacto contigo lo antes posible.',
   errorMessage = 'Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
 } = Astro.props;
 ---
 
 <div class="bg-white rounded-lg shadow-lg p-8">
-  <form id="contact-form" class="space-y-6" data-contact-list={contactListName}>
+  <form id="contact-form" class="space-y-6" data-audience-name={audienceName} data-audience-type={audienceType}>
     <div>
       <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
       <input
@@ -53,40 +55,44 @@ const {
       <button type="submit" class="cta-gradient w-full">Enviar mensaje</button>
     </div>
 
-    <div id="form-status" class="text-center hidden">
-      <p id="success-message" class="text-green-600 hidden">
-        {successMessage}
-      </p>
-      <p id="error-message" class="text-red-600 hidden">
-        {errorMessage}
-      </p>
-    </div>
+    <p id="error-message" class="text-red-600 text-center hidden">
+      {errorMessage}
+    </p>
   </form>
+
+  <div id="success-panel" class="hidden flex-col items-center justify-center text-center py-12 space-y-4">
+    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+      <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <p class="text-green-700 text-lg font-medium">{successMessage}</p>
+  </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form') as HTMLFormElement;
-    const formStatus = document.getElementById('form-status');
-    const successMessage = document.getElementById('success-message');
+    const successPanel = document.getElementById('success-panel');
     const errorMessage = document.getElementById('error-message');
 
-    if (form && formStatus && successMessage && errorMessage) {
+    if (form && successPanel && errorMessage) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const formData = new FormData(form);
         const data = {
-          contact_list_name: form.dataset.contactList,
-          name: formData.get('name'),
+          audience: {
+            name: form.dataset.audienceName,
+            audience_type: form.dataset.audienceType,
+          },
           email: formData.get('email'),
+          first_name: formData.get('name'),
           message: formData.get('message'),
         };
 
-        console.log('Data', data);
-
         try {
-          const response = await fetch('https://waitlist.hlab.es/contact/messages/', {
+          const response = await fetch('https://formrelay.hlab.es/api/subscribers/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -94,15 +100,12 @@ const {
             body: JSON.stringify(data),
           });
 
-          formStatus.classList.remove('hidden');
-
           if (response.ok) {
-            successMessage.classList.remove('hidden');
-            errorMessage.classList.add('hidden');
-            form.reset();
+            form.classList.add('hidden');
+            successPanel.classList.remove('hidden');
+            successPanel.classList.add('flex');
           } else {
             errorMessage.classList.remove('hidden');
-            successMessage.classList.add('hidden');
 
             const errorText = await response.text().catch(() => 'No response text');
             console.error('Error submitting form:', {
@@ -112,9 +115,7 @@ const {
             });
           }
         } catch (error) {
-          formStatus.classList.remove('hidden');
           errorMessage.classList.remove('hidden');
-          successMessage.classList.add('hidden');
           console.error('Error submitting form:', error);
         }
       });
