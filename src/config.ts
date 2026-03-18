@@ -67,7 +67,7 @@ export const SITE = (): SiteConfig => {
 export const NAVIGATION = (): NavigationConfig => ({
     header: {
         links: [
-            { text: "Promociones", href: `/promociones/` },
+            { text: "Promociones", href: `/#promociones` },
             { text: "Sobre nosotros", href: `/#about` },
         ],
         actions: [
@@ -92,7 +92,7 @@ export const NAVIGATION = (): NavigationConfig => ({
                 title: "Evene",
                 links: [
                     { text: "Sobre nosotros", href: `/#about` },
-                    { text: "Promociones", href: `/promociones/` },
+                    { text: "Promociones", href: `/#promociones` },
                 ],
             },
         ],

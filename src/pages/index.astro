@@ -11,6 +11,19 @@ import excelenciaImg from '~/assets/images/landing/Excelencia.png';
 import joseAvatar from '~/assets/images/landing/jose-garcia.png';
 import anaAvatar from '~/assets/images/landing/ana-garcia.png';
 import danielAvatar from '~/assets/images/landing/daniel-garcia.png';
+import tagomagoImg from '~/assets/promociones/isla-tagomago/aerial-main-view.png';
+
+const developments = [
+  {
+    name: 'ISLA TAGOMAGO',
+    location: 'Dehesa de la Villa, Madrid',
+    status: 'Licencia de obra concedida',
+    description: '2 chalets pareados de lujo con jardín, piscina privada y azotea. Diseño contemporáneo, materiales premium y eficiencia energética A+.',
+    image: tagomagoImg,
+    href: '/promociones/isla-tagomago/',
+    tags: ['Chalets', 'Piscina', 'Jardín', 'Ascensor privado'],
+  },
+];
 ---
 
 <PageLayout
@@ -327,6 +340,103 @@ import danielAvatar from '~/assets/images/landing/daniel-garcia.png';
           </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- Promociones Section -->
+  <section id="promociones" class="bg-[#faf9f7] py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 md:mb-20">
+        <h2 class="scroll-animate text-sm md:text-base tracking-[0.3em] uppercase text-[#1a1a1a] mb-4 font-medium">
+          Nuestras Promociones
+        </h2>
+        <p class="scroll-animate font-serif text-lg md:text-xl text-[#4a4a4a] max-w-2xl mx-auto leading-relaxed mb-6" data-delay="100">
+          Proyectos residenciales exclusivos en ubicaciones privilegiadas de Madrid, donde la calidad, el diseño y la sostenibilidad definen cada hogar.
+        </p>
+        <div class="scroll-animate w-12 h-px bg-[#8b4513] mx-auto" data-delay="200"></div>
+      </div>
+
+      <!-- Development Cards -->
+      {developments.map((dev) => (
+        <a href={dev.href} class="group block">
+          <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500">
+            <!-- Image -->
+            <div class="relative overflow-hidden h-[300px] lg:h-[480px]">
+              <Image
+                src={dev.image}
+                alt={`Vista de ${dev.name}`}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                loading="lazy"
+                widths={[600, 900, 1200]}
+              />
+              <div class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
+              <!-- Status badge -->
+              <div class="absolute top-5 left-5">
+                <span class="inline-flex items-center gap-2.5 bg-white/97 backdrop-blur-sm text-[#1a1a1a] text-sm font-semibold tracking-wider uppercase px-5 py-3 rounded-full shadow-lg">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  {dev.status}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col justify-center p-8 md:p-12 lg:p-16">
+              <p class="text-xs tracking-[0.25em] uppercase text-[#8b4513] mb-3 font-medium">
+                {dev.location}
+              </p>
+              <h3 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6 group-hover:text-[#8b4513] transition-colors">
+                {dev.name}
+              </h3>
+              <div class="w-10 h-px bg-[#8b4513]/40 mb-6"></div>
+              <p class="text-[#4a4a4a] leading-relaxed mb-8">
+                {dev.description}
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2 mb-8">
+                {dev.tags.map((tag) => (
+                  <span class="px-3 py-1.5 bg-[#faf9f7] rounded-full text-xs tracking-wider uppercase text-[#1a1a1a] border border-[#8b4513]/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <div class="inline-flex items-center gap-2 text-[#1a1a1a] font-medium group-hover:text-[#8b4513] transition-colors">
+                Descubrir proyecto
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Coming Soon -->
+  <section class="bg-white py-24 md:py-32 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="scroll-animate text-sm md:text-base tracking-[0.3em] uppercase text-[#1a1a1a] mb-6 font-medium">
+        Próximamente
+      </h2>
+      <div class="scroll-animate w-12 h-px bg-[#8b4513] mx-auto mb-10" data-delay="100"></div>
+      <p class="scroll-animate font-serif text-2xl md:text-3xl text-[#1a1a1a] mb-6 leading-snug" data-delay="200">
+        Nuevos proyectos en preparación
+      </p>
+      <p class="scroll-animate text-[#4a4a4a] leading-relaxed mb-10 max-w-2xl mx-auto" data-delay="300">
+        Estamos trabajando en nuevas promociones en ubicaciones estratégicas de Madrid. Si quieres ser el primero en conocer nuestros próximos lanzamientos, no dudes en ponerte en contacto con nosotros.
+      </p>
+      <a
+        href="/contact"
+        class="bg-[#8b4513] hover:bg-[#8b4513]/90 text-white font-medium text-base px-10 py-4 rounded-full inline-flex items-center gap-2 transition-all shadow-md hover:shadow-lg hover:scale-105"
+      >
+        Contactar
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
     </div>
   </section>
 </PageLayout>
