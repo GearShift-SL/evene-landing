@@ -47,6 +47,10 @@
   @apply bg-primary cursor-pointer;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Hide scrollbar while maintaining scroll functionality */
 .scrollbar-hide {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
