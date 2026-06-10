@@ -504,10 +504,16 @@ const metadata = {
             href="/promociones/isla-tagomago/planos-tagomago-4.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="scroll-animate group block overflow-hidden rounded-2xl bg-white shadow-lg shadow-black/30 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            class="scroll-animate group relative block overflow-hidden rounded-2xl bg-white shadow-lg shadow-black/30 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             data-delay="100"
             data-umami-event="tagomago_planos_4_download"
           >
+            <!-- Diagonal reserved ribbon -->
+            <div class="pointer-events-none absolute inset-0 z-10 overflow-hidden">
+              <div class="absolute left-1/2 top-1/2 w-[200%] -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-gray-500 py-3 text-center text-xs font-bold tracking-[0.2em] uppercase text-white shadow-lg">
+                RESERVADO
+              </div>
+            </div>
             <div class="relative">
               <Image
                 src={thumbnailTagomago4}
